@@ -1,5 +1,5 @@
 // ==================== CONFIGURATION ====================
-const RAZORPAY_KEY = "rzp_test_YOUR_KEY_HERE"; // Replace with your Razorpay key
+const RAZORPAY_KEY = "rzp_live_RVJkaZiWFUbIkH"; // Replace with your Razorpay key
 
 // Subscription Plans Configuration
 const PLANS = {
