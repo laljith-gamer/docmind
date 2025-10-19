@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMind AI - Smart Document Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-file-alt"></i>
+                <span>DocuMind AI</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <button class="btn-upgrade" id="upgradeBtn">
+                    <i class="fas fa-crown"></i> Upgrade
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Smart Document <span class="gradient-text">Management</span></h1>
+                <p>Scan, extract, and organize documents with AI-powered technology. Perfect for students, professionals, and businesses.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="startScanBtn">
+                        <i class="fas fa-camera"></i> Start Scanning
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('pricing')">
+                        View Pricing
+                    </button>
+                </div>
+                <div class="plan-badge" id="currentPlanBadge">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Current Plan: <strong id="planName">Free</strong> | Scans: <strong id="scansCount">0/10</strong></span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="document-preview">
+                    <i class="fas fa-file-invoice fa-5x"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera-retro fa-3x"></i>
+                    <h3>Document Scanning</h3>
+                    <p>Capture documents using your device camera with auto-detection</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-text-height fa-3x"></i>
+                    <h3>AI Text Extraction</h3>
+                    <p>Extract text from documents with 99% accuracy using OCR</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language fa-3x"></i>
+                    <h3>Multi-Language Support</h3>
+                    <p>Support for 20+ languages including Hindi, Tamil, and more</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf fa-3x"></i>
+                    <h3>PDF Export</h3>
+                    <p>Export scanned documents as high-quality PDF files</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain fa-3x"></i>
+                    <h3>AI Summarization</h3>
+                    <p>Get instant summaries and key points from documents</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-upload-alt fa-3x"></i>
+                    <h3>Cloud Backup</h3>
+                    <p>Secure cloud storage for all your documents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="billing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="billingToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Yearly <span class="save-badge">Save 17%</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <p class="plan-description">Perfect for trying out</p>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount">0</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 10 scans per month</li>
+                        <li><i class="fas fa-check"></i> Basic OCR</li>
+                        <li><i class="fas fa-check"></i> PDF export</li>
+                        <li><i class="fas fa-check"></i> Watermarked documents</li>
+                    </ul>
+                    <button class="btn-plan" disabled>Current Plan</button>
+                </div>
+
+                <!-- Student Plan -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>Student</h3>
+                    <p class="plan-description">Best for students</p>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount monthly-price">99</span>
+                        <span class="amount yearly-price" style="display:none;">83</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-total" style="display:none;">₹999 billed yearly</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 100 scans per month</li>
+                        <li><i class="fas fa-check"></i> AI text extraction</li>
+                        <li><i class="fas fa-check"></i> Document summarization</li>
+                        <li><i class="fas fa-check"></i> Study notes generation</li>
+                        <li><i class="fas fa-check"></i> Cloud backup (5GB)</li>
+                        <li><i class="fas fa-check"></i> No watermarks</li>
+                    </ul>
+                    <button class="btn-plan" onclick="subscribeToPlan('student', 'monthly', 99)">Subscribe Now</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <p class="plan-description">For professionals</p>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount monthly-price">299</span>
+                        <span class="amount yearly-price" style="display:none;">250</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-total" style="display:none;">₹2,999 billed yearly</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Unlimited scans</li>
+                        <li><i class="fas fa-check"></i> Advanced AI features</li>
+                        <li><i class="fas fa-check"></i> Q&A from documents</li>
+                        <li><i class="fas fa-check"></i> 20+ languages support</li>
+                        <li><i class="fas fa-check"></i> Cloud backup (50GB)</li>
+                        <li><i class="fas fa-check"></i> Batch processing</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <button class="btn-plan" onclick="subscribeToPlan('professional', 'monthly', 299)">Subscribe Now</button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="pricing-card">
+                    <h3>Business</h3>
+                    <p class="plan-description">For teams</p>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount monthly-price">999</span>
+                        <span class="amount yearly-price" style="display:none;">833</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-total" style="display:none;">₹9,999 billed yearly</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Everything in Professional</li>
+                        <li><i class="fas fa-check"></i> Team collaboration (10 users)</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                        <li><i class="fas fa-check"></i> Unlimited cloud storage</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> Invoice management</li>
+                    </ul>
+                    <button class="btn-plan" onclick="subscribeToPlan('business', 'monthly', 999)">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scanner Modal -->
+    <div id="scannerModal" class="modal">
+        <div class="modal-content scanner-modal">
+            <span class="close" onclick="closeScanner()">&times;</span>
+            <h2><i class="fas fa-camera"></i> Scan Document</h2>
+            
+            <div class="scanner-container">
+                <div class="camera-view" id="cameraView">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas" style="display:none;"></canvas>
+                    <div class="camera-overlay">
+                        <div class="scan-frame"></div>
+                    </div>
+                </div>
+                
+                <div class="scanner-controls">
+                    <button class="btn-secondary" onclick="startCamera()">
+                        <i class="fas fa-video"></i> Start Camera
+                    </button>
+                    <button class="btn-primary" onclick="captureImage()" id="captureBtn" disabled>
+                        <i class="fas fa-camera"></i> Capture
+                    </button>
+                    <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(event)">
+                    <button class="btn-secondary" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-upload"></i> Upload Image
+                    </button>
+                </div>
+
+                <div id="capturedImage" style="display:none;">
+                    <img id="scannedImg" alt="Scanned Document">
+                    <div class="processing-actions">
+                        <button class="btn-primary" onclick="extractText()">
+                            <i class="fas fa-text-height"></i> Extract Text
+                        </button>
+                        <button class="btn-secondary" onclick="downloadPDF()">
+                            <i class="fas fa-file-pdf"></i> Save as PDF
+                        </button>
+                        <button class="btn-secondary" onclick="resetScanner()">
+                            <i class="fas fa-redo"></i> Scan Again
+                        </button>
+                    </div>
+                    
+                    <div id="extractedText" class="extracted-text" style="display:none;">
+                        <h3>Extracted Text:</h3>
+                        <div class="text-content" id="textContent"></div>
+                        <button class="btn-secondary" onclick="copyText()">
+                            <i class="fas fa-copy"></i> Copy Text
+                        </button>
+                    </div>
+                    
+                    <div id="ocrProgress" class="progress-bar" style="display:none;">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <span id="progressText">Processing... 0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documents Library -->
+    <section id="documents" class="documents">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Documents</h2>
+                <button class="btn-secondary" onclick="clearAllDocuments()">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+            </div>
+            <div id="documentsList" class="documents-grid">
+                <div class="empty-state">
+                    <i class="fas fa-folder-open fa-4x"></i>
+                    <p>No documents yet. Start scanning!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 DocuMind AI. Built with ❤️ for seamless document management.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
