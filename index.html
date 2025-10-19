@@ -96,14 +96,9 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="section-title">Choose Your Plan</h2>
-            <div class="billing-toggle">
-                <span class="toggle-label">Monthly</span>
-                <label class="switch">
-                    <input type="checkbox" id="billingToggle">
-                    <span class="slider"></span>
-                </label>
-                <span class="toggle-label">Yearly <span class="save-badge">Save 17%</span></span>
-            </div>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
+                <i class="fas fa-info-circle"></i> Test pricing - ₹1 for 1-day access!
+            </p>
 
             <div class="pricing-grid">
                 <!-- Free Plan -->
@@ -113,13 +108,15 @@
                     <div class="price">
                         <span class="currency">₹</span>
                         <span class="amount">0</span>
-                        <span class="period">/month</span>
+                        <span class="period">/forever</span>
                     </div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> 10 scans per month</li>
-                        <li><i class="fas fa-check"></i> Basic OCR</li>
+                        <li><i class="fas fa-check"></i> Basic camera scanning</li>
                         <li><i class="fas fa-check"></i> PDF export</li>
                         <li><i class="fas fa-check"></i> Watermarked documents</li>
+                        <li><i class="fas fa-times" style="color: #e74c3c;"></i> No text extraction</li>
+                        <li><i class="fas fa-times" style="color: #e74c3c;"></i> No AI features</li>
                     </ul>
                     <button class="btn-plan" disabled>Current Plan</button>
                 </div>
@@ -131,20 +128,24 @@
                     <p class="plan-description">Best for students</p>
                     <div class="price">
                         <span class="currency">₹</span>
-                        <span class="amount monthly-price">99</span>
-                        <span class="amount yearly-price" style="display:none;">83</span>
-                        <span class="period">/month</span>
+                        <span class="amount">1</span>
+                        <span class="period">/day</span>
                     </div>
-                    <div class="yearly-total" style="display:none;">₹999 billed yearly</div>
+                    <p style="color: #27ae60; font-weight: 600; margin: 0.5rem 0;">
+                        <i class="fas fa-clock"></i> 24 hours access
+                    </p>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 100 scans per month</li>
-                        <li><i class="fas fa-check"></i> AI text extraction</li>
-                        <li><i class="fas fa-check"></i> Document summarization</li>
+                        <li><i class="fas fa-check"></i> 100 scans per day</li>
+                        <li><i class="fas fa-check"></i> <strong>AI text extraction</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Document summarization</strong></li>
                         <li><i class="fas fa-check"></i> Study notes generation</li>
                         <li><i class="fas fa-check"></i> Cloud backup (5GB)</li>
                         <li><i class="fas fa-check"></i> No watermarks</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
-                    <button class="btn-plan" onclick="subscribeToPlan('student', 'monthly', 99)">Subscribe Now</button>
+                    <button class="btn-plan" onclick="subscribeToPlan('student', 'daily', 1)">
+                        Subscribe for ₹1
+                    </button>
                 </div>
 
                 <!-- Professional Plan -->
@@ -153,21 +154,25 @@
                     <p class="plan-description">For professionals</p>
                     <div class="price">
                         <span class="currency">₹</span>
-                        <span class="amount monthly-price">299</span>
-                        <span class="amount yearly-price" style="display:none;">250</span>
-                        <span class="period">/month</span>
+                        <span class="amount">2</span>
+                        <span class="period">/day</span>
                     </div>
-                    <div class="yearly-total" style="display:none;">₹2,999 billed yearly</div>
+                    <p style="color: #27ae60; font-weight: 600; margin: 0.5rem 0;">
+                        <i class="fas fa-clock"></i> 24 hours access
+                    </p>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Unlimited scans</li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited scans</strong></li>
                         <li><i class="fas fa-check"></i> Advanced AI features</li>
                         <li><i class="fas fa-check"></i> Q&A from documents</li>
                         <li><i class="fas fa-check"></i> 20+ languages support</li>
                         <li><i class="fas fa-check"></i> Cloud backup (50GB)</li>
                         <li><i class="fas fa-check"></i> Batch processing</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced PDF editing</li>
                     </ul>
-                    <button class="btn-plan" onclick="subscribeToPlan('professional', 'monthly', 299)">Subscribe Now</button>
+                    <button class="btn-plan" onclick="subscribeToPlan('professional', 'daily', 2)">
+                        Subscribe for ₹2
+                    </button>
                 </div>
 
                 <!-- Business Plan -->
@@ -176,22 +181,35 @@
                     <p class="plan-description">For teams</p>
                     <div class="price">
                         <span class="currency">₹</span>
-                        <span class="amount monthly-price">999</span>
-                        <span class="amount yearly-price" style="display:none;">833</span>
-                        <span class="period">/month</span>
+                        <span class="amount">5</span>
+                        <span class="period">/day</span>
                     </div>
-                    <div class="yearly-total" style="display:none;">₹9,999 billed yearly</div>
+                    <p style="color: #27ae60; font-weight: 600; margin: 0.5rem 0;">
+                        <i class="fas fa-clock"></i> 24 hours access
+                    </p>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> Everything in Professional</li>
                         <li><i class="fas fa-check"></i> Team collaboration (10 users)</li>
                         <li><i class="fas fa-check"></i> API access</li>
                         <li><i class="fas fa-check"></i> Custom integrations</li>
                         <li><i class="fas fa-check"></i> Unlimited cloud storage</li>
-                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
                         <li><i class="fas fa-check"></i> Invoice management</li>
+                        <li><i class="fas fa-check"></i> White-label option</li>
                     </ul>
-                    <button class="btn-plan" onclick="subscribeToPlan('business', 'monthly', 999)">Subscribe Now</button>
+                    <button class="btn-plan" onclick="subscribeToPlan('business', 'daily', 5)">
+                        Subscribe for ₹5
+                    </button>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #fff3cd; border-radius: 15px;">
+                <h3 style="color: #856404; margin-bottom: 1rem;">
+                    <i class="fas fa-info-circle"></i> Testing Pricing
+                </h3>
+                <p style="color: #856404; margin: 0;">
+                    These are special test prices valid for 24 hours. After your subscription expires, you'll be automatically moved to the Free plan.
+                </p>
             </div>
         </div>
     </section>
@@ -230,6 +248,9 @@
                         <button class="btn-primary" onclick="extractText()">
                             <i class="fas fa-text-height"></i> Extract Text
                         </button>
+                        <button class="btn-secondary" onclick="generateSummary()">
+                            <i class="fas fa-file-alt"></i> AI Summary
+                        </button>
                         <button class="btn-secondary" onclick="downloadPDF()">
                             <i class="fas fa-file-pdf"></i> Save as PDF
                         </button>
@@ -239,11 +260,16 @@
                     </div>
                     
                     <div id="extractedText" class="extracted-text" style="display:none;">
-                        <h3>Extracted Text:</h3>
+                        <h3><i class="fas fa-check-circle" style="color: #27ae60;"></i> Extracted Text:</h3>
                         <div class="text-content" id="textContent"></div>
-                        <button class="btn-secondary" onclick="copyText()">
-                            <i class="fas fa-copy"></i> Copy Text
-                        </button>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn-secondary" onclick="copyText()">
+                                <i class="fas fa-copy"></i> Copy Text
+                            </button>
+                            <button class="btn-secondary" onclick="generateSummary()">
+                                <i class="fas fa-magic"></i> Summarize
+                            </button>
+                        </div>
                     </div>
                     
                     <div id="ocrProgress" class="progress-bar" style="display:none;">
@@ -273,10 +299,63 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works" style="padding: 5rem 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: bold;">1</div>
+                    <h3>Upload or Scan</h3>
+                    <p style="color: #666;">Use your camera or upload an image of your document</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: bold;">2</div>
+                    <h3>AI Processing</h3>
+                    <p style="color: #666;">Our AI extracts text and analyzes the content</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: bold;">3</div>
+                    <h3>Export & Share</h3>
+                    <p style="color: #666;">Download as PDF or copy the extracted text</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 DocuMind AI. Built with ❤️ for seamless document management.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem;">DocuMind AI</h4>
+                    <p style="color: #95a5a6;">Smart document management powered by AI</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Features</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#features" style="color: #95a5a6; text-decoration: none;">Document Scanner</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#features" style="color: #95a5a6; text-decoration: none;">OCR Technology</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#features" style="color: #95a5a6; text-decoration: none;">AI Summary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Plans</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#pricing" style="color: #95a5a6; text-decoration: none;">Free</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#pricing" style="color: #95a5a6; text-decoration: none;">Student</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#pricing" style="color: #95a5a6; text-decoration: none;">Professional</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#pricing" style="color: #95a5a6; text-decoration: none;">Business</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Contact</h4>
+                    <p style="color: #95a5a6;">support@documindai.com</p>
+                    <p style="color: #95a5a6;">Made with ❤️ in India</p>
+                </div>
+            </div>
+            <hr style="border: none; border-top: 1px solid #34495e; margin: 2rem 0;">
+            <p style="text-align: center;">&copy; 2025 DocuMind AI. All rights reserved.</p>
         </div>
     </footer>
 
